@@ -1,0 +1,11 @@
+This project demonstrates the implementation of a modern Lakehouse architecture using Azure Data Engineering services. Azure Data Lake Storage Gen2 was used as the centralized storage layer and organized into Raw, Bronze, Silver, and Gold containers following the Medallion architecture.
+
+Azure Databricks was used to ingest the raw CSV dataset, enforce an explicit schema, and perform data transformations. The Bronze layer stored structured raw data along with ingestion metadata, ensuring that the original dataset was preserved in a reliable format.
+
+The Silver layer applied data quality checks and transformations. This included filtering invalid records, standardizing region values, and generating a derived revenue column using quantity and unit price.
+
+The Gold layer produced business-ready datasets such as region-level KPIs, top products by revenue, and store-level performance summaries. These curated datasets support analytical and reporting use cases.
+
+Azure Synapse Serverless SQL was used to query the curated data directly from the data lake without requiring a dedicated database. This enabled efficient analytics on Parquet datasets stored in ADLS.
+
+Azure Data Factory was implemented to automate the ingestion pipeline through a Copy Data activity that moves data from the raw layer to the bronze layer. Overall, the architecture demonstrates scalable data engineering practices, separation of storage and compute, and cost-efficient analytics using serverless technologies.
