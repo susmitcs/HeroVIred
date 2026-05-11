@@ -103,8 +103,6 @@ main/
 │   │
 │   ├── metrics/
 │   │   └── tuning_results.csv
-│   │
-│   └── plots/
 │
 ├── requirements.txt
 │
